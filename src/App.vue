@@ -2,34 +2,34 @@
 
 <template>
   <main>
-  <article class="article">
-    <div id="mainimage">
-      <img src="images/drawers.jpg" alt="A green drawer">
-    </div>
+    <article class="article">
+      <div id="mainimage">
+        <img src="images/drawers.jpg" alt="A green drawer">
+      </div>
 
-    <div class="article__content">
-      <section id="headline" >
-        <h2 class="article__headline">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
-      </section>
+      <div class="article__content">
+        <section id="headline" >
+          <h2 class="article__headline">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
+        </section>
 
-      <section id="maintext" >
-        <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete.</p>
-      </section>
+        <section id="maintext" >
+          <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete</p>
+        </section>
 
-      <section id="profile">
-        <div class="article__profile">
-          <img src="images/avatar-michelle.jpg" alt="avatar-michelle">
-          <div class="about">
-            <h3 class="name">Michelle Appleton</h3>
-            <p>28 Jun 2020</p>
+        <section id="profile">
+          <div class="article__profile">
+            <img src="images/avatar-michelle.jpg" alt="avatar-michelle">
+            <div class="about">
+              <h3 class="name">Michelle Appleton</h3>
+              <p>28 Jun 2020</p>
+            </div>
+            <div class="share-icon">
+              <img src="images/icon-share.svg" alt="a share icon">
+             </div>
           </div>
-          <div class="share-icon">
-            <img src="images/icon-share.svg" alt="a share icon">
-          </div>
-        </div>
       </section>
-    </div>
-  </article>
+      </div>
+    </article>
   </main>
 </template>
 
@@ -55,13 +55,18 @@
     font-size: 0.8rem;
     background-color: var(--clr-lightGrayishBlue);
     padding: 4.5rem 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }
 
   .article {
     background-color: white;
     border-radius: 1rem;
     overflow: hidden;
-    max-width: 375px;
+    max-width: 600px;
+    display: grid;
   }
 
   .article__content {
@@ -91,6 +96,11 @@
     max-width: 40px;
   }
 
+  #profile .about {
+    margin-right: auto;
+    margin-left: 0.5rem;
+  }
+
   #profile .name {
     color: var(--clr-veryDarkGrayishBlue);
     font-size: 0.8rem;
@@ -103,6 +113,41 @@
     height: 30px;
     display: grid;
     place-content: center;
+  }
+
+  @media(min-width: 600px) {
+    .article {
+      grid-template-columns: 1.5fr 2fr;
+    }
+
+    .article__content {
+      display: grid;
+      padding: 1.3rem 1.5rem;
+    }
+
+    #headline .article__headline {
+      padding: 0;
+    }
+
+    #maintext {
+      font-size: 0.6rem;
+      line-height: 1rem;
+      padding-top: 0.5rem;
+    }
+
+    #profile {
+      margin: 0;
+      padding-top: 0.5rem;
+    }
+
+    .article__profile img {
+      max-width: 30px;
+      max-height: 30px;
+    }
+
+    #profile .name, p {
+      font-size: 0.7rem;
+    }
   }
  
 </style>
