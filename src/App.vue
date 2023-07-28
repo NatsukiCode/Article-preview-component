@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Ref, ref } from 'vue';
+const showTooltip: Ref<boolean> = ref(false);
+</script>
 
 <template>
   <main>
@@ -23,12 +26,26 @@
               <h3 class="name">Michelle Appleton</h3>
               <p>28 Jun 2020</p>
             </div>
-            <div class="share-icon">
+            <div class="share-icon" @click="showTooltip = true">
               <img src="images/icon-share.svg" alt="a share icon">
              </div>
           </div>
-      </section>
+        </section>
       </div>
+      <div class="share-tooltip" v-if="showTooltip" @click="showTooltip = false">
+            <div class="share">
+              <p>share</p>
+            </div>
+            <div class="sns-icons" > 
+              <img src="images/icon-facebook.svg" alt="facebook icon">
+              <img src="images/icon-twitter.svg" alt="twitter icon">
+              <img src="images/icon-pinterest.svg" alt="pinterest icon">
+            </div>
+            <div class="share-icon">
+              <img src="images/icon-share.svg" alt="a share icon">
+            </div>
+
+          </div>
     </article>
   </main>
 </template>
@@ -149,5 +166,36 @@
       font-size: 0.7rem;
     }
   }
+
+  /* This is for the active state styling. */
+  .share-tooltip {
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-veryDarkGrayishBlue);
+    padding: 1rem;
+  }
+
+  .share {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+  }
+
+  .sns-icons {
+    display: flex;
+    margin-left: 1rem;
+    gap: 1rem;
+  }
+
+  .share-tooltip .share-icon {
+    background-color: var(--clr-desaturatedDarkBlue);
+    margin-left: 2.3rem;
+  }
+
+  .share-tooltip .share-icon img {
+    filter: invert(100%);
+  }
+
  
 </style>
