@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Ref, ref } from 'vue';
 const showTooltip: Ref<boolean> = ref(false);
+const toggleTooltip = () => {
+showTooltip.value = !showTooltip.value;
+};
 </script>
 
 <template>
@@ -19,20 +22,20 @@ const showTooltip: Ref<boolean> = ref(false);
           <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete</p>
         </section>
 
-        <section id="profile">
+        <section v-if="!showTooltip" id="profile">
           <div class="article__profile">
             <img src="images/avatar-michelle.jpg" alt="avatar-michelle">
             <div class="about">
               <h3 class="name">Michelle Appleton</h3>
               <p>28 Jun 2020</p>
             </div>
-            <div class="share-icon" @click="showTooltip = true">
+            <div class="share-icon" @click="toggleTooltip">
               <img src="images/icon-share.svg" alt="a share icon">
              </div>
           </div>
         </section>
       </div>
-      <div class="share-tooltip" v-if="showTooltip" @click="showTooltip = false">
+      <div class="share-tooltip" v-if="showTooltip" @click="toggleTooltip">
             <div class="share">
               <p>share</p>
             </div>
@@ -173,6 +176,7 @@ const showTooltip: Ref<boolean> = ref(false);
     justify-content: center;
     background-color: var(--clr-veryDarkGrayishBlue);
     padding: 1rem;
+    margin-top: 1.2rem;
   }
 
   .share {
@@ -184,8 +188,10 @@ const showTooltip: Ref<boolean> = ref(false);
 
   .sns-icons {
     display: flex;
+    margin-top: 0.3rem;
     margin-left: 1rem;
     gap: 1rem;
+    height: 1.3rem;
   }
 
   .share-tooltip .share-icon {
@@ -196,6 +202,4 @@ const showTooltip: Ref<boolean> = ref(false);
   .share-tooltip .share-icon img {
     filter: invert(100%);
   }
-
- 
 </style>
