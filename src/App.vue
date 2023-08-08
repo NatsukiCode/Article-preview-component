@@ -78,7 +78,7 @@ showTooltip.value = !showTooltip.value;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    height: 700px;
   }
 
   .article {
@@ -168,6 +168,26 @@ showTooltip.value = !showTooltip.value;
     #profile .name, p {
       font-size: 0.7rem;
     }
+    /* For the pop up bubble styling */
+    .share-tooltip {
+      position: relative;
+      margin: 1.5em 0;
+      background: #1a62bc;
+      border-radius: 0.8rem;
+    }
+
+    .share-tooltip::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      border: 15px solid transparent;
+      border-top: 15px solid var(--clr-veryDarkGrayishBlue);
+    }
+
+    .share-tooltip .share-icon {
+      display: none;
+    }
+
   }
 
   /* This is for the active state styling. */
