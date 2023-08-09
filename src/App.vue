@@ -83,7 +83,7 @@ showTooltip.value = !showTooltip.value;
 
   .article {
     background-color: white;
-    border-radius: 1rem;
+    border-radius: 0.8rem;
     overflow: hidden;
     max-width: 600px;
     display: grid;
@@ -135,18 +135,31 @@ showTooltip.value = !showTooltip.value;
     place-content: center;
   }
 
+/* For the desktop ver styling */
   @media(min-width: 600px) {
     .article {
       grid-template-columns: 1.5fr 2fr;
+      overflow: visible;
+    }
+
+    #mainimage {
+      background-image: url(images/drawers.jpg);
+      background-size: cover;
+      margin-right: 1.8rem;
+    }
+
+    #mainimage img {
+      display: none;
     }
 
     .article__content {
       display: grid;
-      padding: 1.3rem 1.5rem;
+      padding: 1.3rem 1.3rem 1.3rem 0;
     }
 
     #headline .article__headline {
       padding: 0;
+      font-size: 1.1rem;
     }
 
     #maintext {
@@ -157,7 +170,7 @@ showTooltip.value = !showTooltip.value;
 
     #profile {
       margin: 0;
-      padding-top: 0.5rem;
+      padding-top: 1rem;
     }
 
     .article__profile img {
@@ -174,6 +187,9 @@ showTooltip.value = !showTooltip.value;
       margin: 1.5em 0;
       background: #1a62bc;
       border-radius: 0.8rem;
+      left: 160%;
+      bottom: 100%;
+      overflow: visible;
     }
 
     .share-tooltip::before {
@@ -187,10 +203,9 @@ showTooltip.value = !showTooltip.value;
     .share-tooltip .share-icon {
       display: none;
     }
-
   }
 
-  /* This is for the active state styling. */
+  /* For the mobile active state styling. */
   .share-tooltip {
     display: flex;
     justify-content: center;
