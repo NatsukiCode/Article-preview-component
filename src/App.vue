@@ -22,7 +22,7 @@ showTooltip.value = !showTooltip.value;
           <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete</p>
         </section>
 
-        <section v-if="!showTooltip" id="profile">
+        <section id="profile">
           <div class="article__profile">
             <img src="images/avatar-michelle.jpg" alt="avatar-michelle">
             <div class="about">
@@ -35,23 +35,23 @@ showTooltip.value = !showTooltip.value;
           </div>
         </section>
       </div>
-      <div class="share-tooltip" v-if="showTooltip" @click="toggleTooltip">
-            <div class="share">
-              <p>share</p>
-            </div>
-            <div class="sns-icons" > 
-              <img src="images/icon-facebook.svg" alt="facebook icon">
-              <img src="images/icon-twitter.svg" alt="twitter icon">
-              <img src="images/icon-pinterest.svg" alt="pinterest icon">
-            </div>
-            <div class="share-icon">
-              <img src="images/icon-share.svg" alt="a share icon">
-            </div>
-
-          </div>
     </article>
+    <div class="share-tooltip" v-if="showTooltip" @click="toggleTooltip">
+      <div class="share">
+        <p>share</p>
+      </div>
+      <div class="sns-icons" > 
+        <img src="images/icon-facebook.svg" alt="facebook icon">
+        <img src="images/icon-twitter.svg" alt="twitter icon">
+        <img src="images/icon-pinterest.svg" alt="pinterest icon">
+      </div>
+      <div class="share-icon">
+        <img src="images/icon-share.svg" alt="a share icon">
+      </div>
+    </div>
   </main>
 </template>
+
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
@@ -146,6 +146,7 @@ showTooltip.value = !showTooltip.value;
       background-image: url(images/drawers.jpg);
       background-size: cover;
       margin-right: 1.8rem;
+      border-radius: 0.8rem 0 0 0.8rem;
     }
 
     #mainimage img {
@@ -182,13 +183,13 @@ showTooltip.value = !showTooltip.value;
       font-size: 0.7rem;
     }
     /* For the pop up bubble styling */
-    .share-tooltip {
-      position: relative;
-      margin: 1.5em 0;
+    .share-tooltip {  
+      left: 61%;
+      position: absolute;
       background: #1a62bc;
       border-radius: 0.8rem;
-      left: 160%;
-      bottom: 100%;
+      /* left: 170%; */
+      /* bottom: 200%; */
       overflow: visible;
     }
 
@@ -196,8 +197,8 @@ showTooltip.value = !showTooltip.value;
       content: "";
       position: absolute;
       top: 100%;
-      border: 15px solid transparent;
-      border-top: 15px solid var(--clr-veryDarkGrayishBlue);
+      border: 12px solid transparent;
+      border-top: 10px solid var(--clr-veryDarkGrayishBlue);
     }
 
     .share-tooltip .share-icon {
@@ -206,11 +207,19 @@ showTooltip.value = !showTooltip.value;
   }
 
   /* For the mobile active state styling. */
+  @media(max-width: 375px) {
+    .share-tooltip {
+      position: absolute;
+      width: 325px;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+
   .share-tooltip {
     display: flex;
     justify-content: center;
     background-color: var(--clr-veryDarkGrayishBlue);
-    padding: 1rem;
+    padding: 0.8rem;
     margin-top: 1.2rem;
   }
 
@@ -225,7 +234,7 @@ showTooltip.value = !showTooltip.value;
     display: flex;
     margin-top: 0.3rem;
     margin-left: 1rem;
-    gap: 1rem;
+    gap: 0.8rem;
     height: 1.3rem;
   }
 
@@ -237,4 +246,5 @@ showTooltip.value = !showTooltip.value;
   .share-tooltip .share-icon img {
     filter: invert(100%);
   }
+  
 </style>
