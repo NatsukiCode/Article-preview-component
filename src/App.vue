@@ -210,8 +210,8 @@ showTooltip.value = !showTooltip.value;
   @media(max-width: 375px) {
     .share-tooltip {
       position: absolute;
-      width: 325px;
       border-radius: 0 0 10px 10px;
+      bottom: 0%;
     }
   }
 
