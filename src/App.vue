@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
+import { type Ref, ref } from 'vue';
 const showTooltip: Ref<boolean> = ref(false);
 const toggleTooltip = () => {
 showTooltip.value = !showTooltip.value;
