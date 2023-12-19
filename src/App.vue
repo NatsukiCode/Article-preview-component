@@ -10,7 +10,7 @@ showTooltip.value = !showTooltip.value;
   <main>
     <article class="article">
       <div id="mainimage">
-        <img src="images/drawers.jpg" alt="A green drawer">
+        <img src="/images/drawers.jpg" alt="A green drawer">
       </div>
 
       <div class="article__content">
@@ -24,13 +24,13 @@ showTooltip.value = !showTooltip.value;
 
         <section id="profile">
           <div class="article__profile">
-            <img src="images/avatar-michelle.jpg" alt="avatar-michelle">
+            <img src="/images/avatar-michelle.jpg" alt="avatar-michelle">
             <div class="about">
               <h3 class="name">Michelle Appleton</h3>
               <p>28 Jun 2020</p>
             </div>
             <div class="share-icon" @click="toggleTooltip">
-              <img src="images/icon-share.svg" alt="a share icon">
+              <img src="/images/icon-share.svg" alt="a share icon">
              </div>
           </div>
         </section>
@@ -41,12 +41,12 @@ showTooltip.value = !showTooltip.value;
         <p>share</p>
       </div>
       <div class="sns-icons" > 
-        <img src="images/icon-facebook.svg" alt="facebook icon">
-        <img src="images/icon-twitter.svg" alt="twitter icon">
-        <img src="images/icon-pinterest.svg" alt="pinterest icon">
+        <img src="/images/icon-facebook.svg" alt="facebook icon">
+        <img src="/images/icon-twitter.svg" alt="twitter icon">
+        <img src="/images/icon-pinterest.svg" alt="pinterest icon">
       </div>
       <div class="share-icon">
-        <img src="images/icon-share.svg" alt="a share icon">
+        <img src="/images/icon-share.svg" alt="a share icon">
       </div>
     </div>
   </main>
@@ -143,7 +143,7 @@ showTooltip.value = !showTooltip.value;
     }
 
     #mainimage {
-      background-image: url(images/drawers.jpg);
+      background-image: url(/images/drawers.jpg);
       background-size: cover;
       margin-right: 1.8rem;
       border-radius: 0.8rem 0 0 0.8rem;
